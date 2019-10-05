@@ -1,0 +1,389 @@
+H-01B机技术规格解析
+佚名
+2019-09-27
+
+本文内容主要来自系统软件的逆向分析和部分文章的只言片语，错漏地方可能较多，多包涵。
+文中提到的H-01B机，可以模拟器mame来体验。
+参考书目《TRS-80微计算机驻机解释程序》
+使用工具：IDA Pro
+
+一、硬件规格
+H-01B机是80年代中期的一种自带中文系统的微型计算机，与中华学习机同期，具体时间难以考证，暂认为是1985--1987年的。
+在网上可以看到同类型的机型有三种：
+H-01B    : H-01型中文教育电脑 普乐电器公司制造
+NF500A : H-01型汉字微电脑   中国科学院H电脑公司 生产厂商国营八三〇厂制造
+JCE        : H-01型中文普及电脑 北岳电子有限公司制造 生产厂商广东江门计算机应用设备厂
+
+硬件规格类似：
+H-01B机器
+cpu Z-80A 2MHz（信息来源：广告）
+
+NF500A教学电脑
+cpu		Z-80A 4MHz（信息来源：广告）
+video	MC6845P
+sysrom	16KB EPROM
+hzrom	32KB EPROM
+ram	32KB SRAM
+vram	16Kx4bit DRAM
+
+JCE
+video	HD6845SP
+sysrom	16KB EPROM
+hzrom	32KB EPROM
+extrom	16KB EPROM（功能未知）
+
+这是产品广告的部分内容：
+H-01B型中文教育电脑技术指标
+CPU：	Z80A
+主时钟：	2MHZ
+内存：	ROM48kB（包括BASIC解释程序和一级汉字）RAM8kB（包括显示存储）32kB（用户空间，可扩充为48kB）
+分辩率：	336×192显示：可接家用电视或监视器
+外存：	普通家用盒式录音机，采用快速Kansas标准
+音乐：	3个八度音程（共36个音律），10种节拍。可编程演奏或手动演奏
+汉字：	国际一级汉字3755个，16×15单线体。拼音或区位输入，还可扩充五键五笔划及五笔字型输入
+字符集：	标准ASCII字符
+图形符：	专用制表符和中国象棋图符
+打印机：	经接口后可支持FX-80和FX-100等打印机，为Cen tronics标准
+输出接口：总线接口和内存扩充接口
+电源：	220V50Hz
+体积：	370mm×230mm×80mm
+重量：	2kg
+
+H-01B的系统软件主要仿照TRS-80 II , 可以对比一下TRS-80 II 的硬件指标：
+CPU Z-80A 4MHz/2MHz
+Video chip: MC6545 CRTC
+Video RAM: 2K F800H --- FFFFH
+80x24 = 1920
+
+二、内存
+下面内存分布图来自于“H-01B机汉字管理程序的获取及造字复原软件报1990年”。仅供参考。
+H-01B型中文教育电脑
+		主存
+0000H	3FFFH	BASIC系统
+4000H	7FFFH	用户区
+8000H	BFFFH	用户区
+C000H	FFFFH	扩充区
+
+		辅存
+8000H	FFFFH	汉字管理字库
+
+
+以下是对 ROM 逆向分析后得出的结论：
+0000 -- 3FFF SYSROM 16KB 系统ROM
+8000 -- FFFF HZROM  32KB 汉字ROM
+4000 -- BFFF RAM 32KB
+C000 -- FFFF VRAM 16Kx4bit
+
+		主存			内存切换开关 IO_70H
+0000H	3FFFH	BASIC系统		xxH
+
+4000H	7FFFH	用户区			xxH
+C000H	FFFFH	ROM扩充区		00H
+
+B000H	BFFFH	键盘IO			40H
+或B800H	BFFFH	键盘IO			40H
+
+C000H	FFFFH	VRAM			40H
+
+		辅存
+8000H	FFFFH	汉字管理字库		C0H
+
+
+U4 汉字 ROM 地址 0 --- 4000 存放了 250 个英文字符图形点阵。
+
+
+三、显示方式
+
+最让人吃惊的它的显示方式，自成体系：
+显存的硬件规格 16K*4bit
+屏幕格式：12行×42字符，分辨率（336×192）。
+这些参数关系，分析中百思不解。
+经反复调试尝试，其中的关键点才慢慢浮出。
+4bit，也就是说，每个字节只有一半有效，也不存在纯字符模式。
+个别文章中的 332*192 的是误传。
+
+21*16 = 336 点（水平）
+12*16 = 192 点（垂直）
+336/4 = 84 字节
+84*192 = 16128 < 16384
+
+经计算正好能够放在 16K*4bit 的显存中。
+
+NF-500A 每16个扫描线，显存的起始地址加 84*16。
+屏幕缓冲区采用的是每个地址存4个点，占用了低4位。
+每16个字节为一组，内存地址连续存放一个英文字符的16行点阵。这与习惯存放方式有区别。
+
+
+四、IO操作
+没有特别之处，对显示芯片和内存页的切换都是通过 Z80 IO 来完成的。
+
+写入IO(60H)，6545P 寄存器号码。
+写入IO(64H)，6545P 寄存器内容。
+读取IO(50h)，第7位，读磁带。
+写入IO(70h) 00H C0H，主存辅存切换。第6、7位内存切换；第5位喇叭输出；第4位磁带输出。
+写入IO (70h) 40h，读取 BFFFH 比较最后7位是否为 7Fh，判断是否有键盘输入。
+
+
+五、键盘IO
+
+NF-500A
+   KD7 KD6 KD5 KD4 KD3 KD2 KD1 KD0  扫描用地址
+A0      R   E   5 CTRL? 6   T   W    BFFEH
+A1      3   2   Y  E/C  U   4   1    BFFDH
+A2      9   :   8   -   7   0   下   BFFBH
+A3      D   S   G  ESC  H   F   Q    BFF7H
+A4      X   A   V   Z       C  BRK   BFEFH
+A5      L BS 左 K  空格 J   ;   右   BFDFH
+A6      M   .   N       B   ,   /    BFBFH
+A7      P  RETN O SHIFT I   [        BF7FH
+
+按键 27 3 56 34 51 功能未验证，暂时放在 ESC ] TAB \ ' 位置。
+
+E/C E汉 = ~  对应 ascii 20
+ESC 对应 ascii 31
+BS 对应 ascii 8
+61 对应 ascii 13 回车键
+16 对应 ascii 10 下
+56 对应 ascii 16
+27 3 34 51  无反应
+
+测试按键 ASCII 码的程序
+10 A$=INKEY$
+20 IF LEN(A$)>0 THEN PRINT ASC(A$)
+30 GOTO 10
+
+
+H-01B
+   KD7 KD6 KD5 KD4 KD3 KD2 KD1 KD0  扫描用地址
+A0             空格 Z   A   Q   1    BFFEH
+A1             BRK  X   S   W   2    BFFDH
+A2             (16) C   D   E   3    BFFBH
+A3             E/C  V   F   R   4    BFF7H
+A4              -   B   G   T   5    BFEFH
+A5             右   N   H   Y   6    BFDFH
+A6            RETN  M   J   U   7    BFBFH
+A7              [   ,   K   I   8    BF7FH
+A8            BS 左 .   L   O   9    BEFFH
+A9              :   /   ;   P   0    BDFFH
+A10           SHIFT            下    BBFFH
+
+需要确定的键
+Ctrl ESC
+
+六、系统ROM的主要功能
+因未找到H-01B的系统ROM，使用了 NF500A 的ROM与 TRS-80 的系统做了部分分析比对。
+通过对比可知，BASIC解释程序主体差别不大。
+
+与TRS-80的rom对比分析
+----------------------------------------
+中断向量
+
+从 int 向量表对比 TRS-80 的程序
+
+TRS80 每25ms一个中断信号，NF500A无外部中断。
+
+int 08H
+
+TRS80 1C96
+NF500 2861
+
+int 10H
+
+TRS80 1D79
+NF500 2949
+
+int 18H
+TRS80 1C90
+NF500 285B
+
+----------------------------------------
+RST_38 中断转移 a 中断号，09B2H存放入口地址
+
+SYSROM:09B2 A_RST38_0_09B2: dw 0E54h
+SYSROM:09B4 A_RST38_1_09B4: dw 0857h
+SYSROM:09B6 A_RST38_2_09B6: dw 085Ch
+SYSROM:09B8 A_RST38_3_09B8: dw 0C67h
+SYSROM:09BA A_RST38_4_09BA: dw 0C6Eh
+SYSROM:09BC A_RST38_5_09BC: dw 07A6h
+SYSROM:09BE A_RST38_6_09BE: dw 07EFh
+SYSROM:09C0 A_RST38_7_09C0: dw 082Bh
+SYSROM:09C2 A_RST38_8_09C2: dw 0431h
+SYSROM:09C4 A_RST38_9_09C4: dw 0833h
+SYSROM:09C6 A_RST38_A_09C6: dw 0FE9h
+SYSROM:09C8 A_RST38_B_09C8: dw 09D4h
+SYSROM:09CA A_RST38_C_09CA: dw 0AF7h
+SYSROM:09CC A_RST38_D_09CC: dw 0B07h
+SYSROM:09CE A_RST38_E_09CE: dw 0BADh
+SYSROM:09D0 A_RST38_F_09D0: dw 0B27h
+SYSROM:09D2 A_RST38_10_09D2:dw 0C5Ch
+
+
+键盘输入
+SYSROM:1255                 ld      a, 1
+SYSROM:1257                 rst     30h
+
+写磁带
+SYSROM:113E                 ld      a, 0Eh
+SYSROM:1140                 rst     30h
+
+读磁带
+SYSROM:112F                 ld      a, 0Fh
+SYSROM:1131                 rst     30h
+
+----------------------------------------
+BASIC关键字程序入口
+
+END
+TRS80 1DAEH
+NF500 2981H
+
+FOR 子程序
+TRS80 1CA1H
+NF500 286CH
+
+FOR 286CH
+查找 6CH 28H 找到 BASIC 命令入口表。或通过搜索字符串 “ESET”找保留字。
+23E4H
+
+BASIC 保留字表 80H结束
+TRS80 1650H -- 1821H
+NF500 2210H -- 23E1H
+
+BASIC 命令入口表  到 NEW 命令
+TRS80 1822H -- 1899H
+NF500 23E2H 开始
+
+BASIC 内部函数入口表  到 NEW 函数
+TRS80 1608H -- 164FH
+NF500 21C7H 开始
+
+----------------------------------------
+NF-500A 关键字入口表
+128       END  2981H  10625
+129       FOR  286CH  10348
+130     RESET  10A7H   4263
+131       SET  10A4H   4260
+132       CLS  1107H   4359
+133       CMD  42F3H  17139
+134    RANDOM  1116H   4374
+135      NEXT  2EC2H  11970
+136      DATA  2AD8H  10968
+137     INPUT  2DA3H  11683
+138       DIM  3214H  12820
+139      READ  2DF8H  11768
+140       LET  2AF4H  10996
+141      GOTO  2A95H  10901
+142       RUN  2A76H  10870
+143        IF  2C0CH  11276
+144   RESTORE  2962H  10594
+145     GOSUB  2A84H  10884
+146    RETURN  2AB1H  10929
+147       REM  2ADAH  10970
+148      STOP  297CH  10620
+149      ELSE  2ADAH  10970
+150      TRON  29CAH  10698
+151     TROFF  29CBH  10699
+152    DEFSTR  29D3H  10707
+153    DEFINT  29D6H  10710
+154    DEFSNG  29D9H  10713
+155    DEFDBL  29DCH  10716
+156      LINE  4323H  17187
+157      EDIT  3AEEH  15086
+158     ERROR  2BC7H  11207
+159    RESUME  2B82H  11138
+160       OUT  3739H  14137
+161        ON  2B3FH  11071
+162      MOVE  108AH   4234
+163     COLOR  127BH   4731
+164       GET  42FFH  17151
+165       PUT  4302H  17154
+166     CLOSE  4305H  17157
+167      LOAD  4308H  17160
+168     SOUND  127EH   4734
+169      NAME  430EH  17166
+170      KILL  4311H  17169
+171      MODE  128EH   4750
+172      RSET  431AH  17178
+173      SAVE  4320H  17184
+174    SYSTEM  115CH   4444
+175    LPRINT  2C3AH  11322
+176       DEF  42DBH  17115
+177      POKE  391BH  14619
+178     PRINT  2C42H  11330
+179      CONT  29B7H  10679
+180      LIST  376CH  14188
+181     LLIST  3767H  14183
+182    DELETE  380FH  14351
+183      AUTO  2BDBH  11227
+184     CLEAR  2A4DH  10829
+185     CLOAD  386DH  14445
+186     CSAVE  383EH  14398
+187       NEW  2712H  10002
+
+188      TAB(  0000H      0
+189        TO  0000H      0
+190        FN  0000H      0
+191     USING  0000H      0
+192    VARPTR  0000H      0
+193       USR  0000H      0
+194       ERL  0000H      0
+195       ERR  0000H      0
+196   STRING$  0000H      0
+197     INSTR  0000H      0
+198     POINT  0000H      0
+199     TIME$  0000H      0
+200       MEM  0000H      0
+201    INKEY$  0000H      0
+202      THEN  0000H      0
+203       NOT  0000H      0
+204      STEP  0000H      0
+205         +  0000H      0
+206         -  0000H      0
+207         *  0000H      0
+208         /  0000H      0
+209         [  0000H      0
+210       AND  0000H      0
+211        OR  0000H      0
+212         >  0000H      0
+213         =  0000H      0
+214         <  0000H      0
+
+215       SGN  151BH   5403
+216       INT  16C8H   5832
+217       ABS  1508H   5384
+218       FRE  33E1H  13281
+219       INP  372DH  14125
+220       POS  3402H  13314
+221       SQR  1FA6H   8102
+222       RND  2088H   8328
+223       LOG  139AH   5018
+224       EXP  1FF8H   8184
+225       COS  2100H   8448
+226       SIN  2106H   8454
+227       TAN  2167H   8551
+228       ATN  217CH   8572
+229      PEEK  3914H  14612
+230       CVI  42D2H  17106
+231       CVS  42D8H  17112
+232       CVD  42DEH  17118
+233       EOF  42E1H  17121
+234       LOC  42E4H  17124
+235       LOF  42E7H  17127
+236      MKI$  42EAH  17130
+237      MKS$  42EDH  17133
+238      MKD$  42F0H  17136
+239      CINT  1610H   5648
+240      CSNG  1642H   5698
+241      CDBL  166CH   5740
+242       FIX  16B7H   5815
+243       LEN  3621H  13857
+244      STR$  3443H  13379
+245       VAL  36F7H  14071
+246       ASC  362FH  13871
+247      CHR$  3640H  13888
+248     LEFT$  3692H  13970
+249    RIGHT$  36C2H  14018
+250      MID$  36CBH  14027
+
+251         '  0000H      0
+

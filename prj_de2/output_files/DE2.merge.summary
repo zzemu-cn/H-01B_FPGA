@@ -1,0 +1,14 @@
+Partition Merge Status : Successful - Sat Oct 05 11:32:02 2019
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : DE2
+Top-level Entity Name : NF500A_TOP
+Family : Cyclone II
+Total logic elements : 6,752
+    Total combinational functions : 4,972
+    Dedicated logic registers : 3,326
+Total registers : 3326
+Total pins : 202
+Total virtual pins : 0
+Total memory bits : 240,640
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 2

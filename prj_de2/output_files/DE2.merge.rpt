@@ -1,0 +1,510 @@
+Partition Merge report for DE2
+Sat Oct 05 11:32:02 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Connections to In-System Debugging Instance "auto_signaltap_0"
+  5. Partition Merge Partition Statistics
+  6. Partition Merge Resource Usage Summary
+  7. Partition Merge RAM Summary
+  8. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Partition Merge Summary                                                               ;
++------------------------------------+--------------------------------------------------+
+; Partition Merge Status             ; Successful - Sat Oct 05 11:32:02 2019            ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; DE2                                              ;
+; Top-level Entity Name              ; NF500A_TOP                                       ;
+; Family                             ; Cyclone II                                       ;
+; Total logic elements               ; 6,752                                            ;
+;     Total combinational functions  ; 4,972                                            ;
+;     Dedicated logic registers      ; 3,326                                            ;
+; Total registers                    ; 3326                                             ;
+; Total pins                         ; 202                                              ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 240,640                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 2                                                ;
++------------------------------------+--------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                            ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Source File       ; Post-Fit               ;                                ;
+; sld_hub:auto_hub               ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_hub:auto_hub               ;
+; sld_signaltap:auto_signaltap_0 ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_signaltap:auto_signaltap_0 ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; Source File            ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                                                                 ;
++------------------------------------------------------------------------------------------+---------------+-----------+----------------+-------------------+------------------------------------------------------------------------------------------+---------+
+; Name                                                                                     ; Type          ; Status    ; Partition Name ; Netlist Type Used ; Actual Connection                                                                        ; Details ;
++------------------------------------------------------------------------------------------+---------------+-----------+----------------+-------------------+------------------------------------------------------------------------------------------+---------+
+; CLK_CNT[0]                                                                               ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CLK_CNT[0]                                                                               ; N/A     ;
+; CLK_CNT[0]                                                                               ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CLK_CNT[0]                                                                               ; N/A     ;
+; CLK_CNT[1]                                                                               ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CLK_CNT[1]                                                                               ; N/A     ;
+; CLK_CNT[1]                                                                               ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CLK_CNT[1]                                                                               ; N/A     ;
+; CLK_CNT[2]                                                                               ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CLK_CNT[2]                                                                               ; N/A     ;
+; CLK_CNT[2]                                                                               ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CLK_CNT[2]                                                                               ; N/A     ;
+; CLK_CNT[3]                                                                               ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CLK_CNT[3]                                                                               ; N/A     ;
+; CLK_CNT[3]                                                                               ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CLK_CNT[3]                                                                               ; N/A     ;
+; CPU_A[0]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[0]                                                  ; N/A     ;
+; CPU_A[0]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[0]                                                  ; N/A     ;
+; CPU_A[10]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[10]                                                 ; N/A     ;
+; CPU_A[10]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[10]                                                 ; N/A     ;
+; CPU_A[11]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[11]                                                 ; N/A     ;
+; CPU_A[11]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[11]                                                 ; N/A     ;
+; CPU_A[12]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[12]                                                 ; N/A     ;
+; CPU_A[12]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[12]                                                 ; N/A     ;
+; CPU_A[13]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[13]                                                 ; N/A     ;
+; CPU_A[13]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[13]                                                 ; N/A     ;
+; CPU_A[14]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[14]                                                 ; N/A     ;
+; CPU_A[14]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[14]                                                 ; N/A     ;
+; CPU_A[15]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[15]                                                 ; N/A     ;
+; CPU_A[15]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[15]                                                 ; N/A     ;
+; CPU_A[1]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[1]                                                  ; N/A     ;
+; CPU_A[1]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[1]                                                  ; N/A     ;
+; CPU_A[2]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[2]                                                  ; N/A     ;
+; CPU_A[2]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[2]                                                  ; N/A     ;
+; CPU_A[3]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[3]                                                  ; N/A     ;
+; CPU_A[3]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[3]                                                  ; N/A     ;
+; CPU_A[4]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[4]                                                  ; N/A     ;
+; CPU_A[4]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[4]                                                  ; N/A     ;
+; CPU_A[5]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[5]                                                  ; N/A     ;
+; CPU_A[5]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[5]                                                  ; N/A     ;
+; CPU_A[6]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[6]                                                  ; N/A     ;
+; CPU_A[6]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[6]                                                  ; N/A     ;
+; CPU_A[7]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[7]                                                  ; N/A     ;
+; CPU_A[7]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[7]                                                  ; N/A     ;
+; CPU_A[8]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[8]                                                  ; N/A     ;
+; CPU_A[8]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[8]                                                  ; N/A     ;
+; CPU_A[9]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[9]                                                  ; N/A     ;
+; CPU_A[9]                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|A[9]                                                  ; N/A     ;
+; CPU_DI[0]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[0]                                                                                ; N/A     ;
+; CPU_DI[0]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[0]                                                                                ; N/A     ;
+; CPU_DI[1]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[1]                                                                                ; N/A     ;
+; CPU_DI[1]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[1]                                                                                ; N/A     ;
+; CPU_DI[2]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[2]                                                                                ; N/A     ;
+; CPU_DI[2]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[2]                                                                                ; N/A     ;
+; CPU_DI[3]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[3]                                                                                ; N/A     ;
+; CPU_DI[3]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[3]                                                                                ; N/A     ;
+; CPU_DI[4]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[4]                                                                                ; N/A     ;
+; CPU_DI[4]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[4]                                                                                ; N/A     ;
+; CPU_DI[5]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[5]                                                                                ; N/A     ;
+; CPU_DI[5]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[5]                                                                                ; N/A     ;
+; CPU_DI[6]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[6]                                                                                ; N/A     ;
+; CPU_DI[6]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[6]                                                                                ; N/A     ;
+; CPU_DI[7]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[7]                                                                                ; N/A     ;
+; CPU_DI[7]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_DI[7]                                                                                ; N/A     ;
+; CPU_DO[0]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[0]                                               ; N/A     ;
+; CPU_DO[0]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[0]                                               ; N/A     ;
+; CPU_DO[1]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[1]                                               ; N/A     ;
+; CPU_DO[1]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[1]                                               ; N/A     ;
+; CPU_DO[2]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[2]                                               ; N/A     ;
+; CPU_DO[2]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[2]                                               ; N/A     ;
+; CPU_DO[3]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[3]                                               ; N/A     ;
+; CPU_DO[3]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[3]                                               ; N/A     ;
+; CPU_DO[4]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[4]                                               ; N/A     ;
+; CPU_DO[4]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[4]                                               ; N/A     ;
+; CPU_DO[5]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[5]                                               ; N/A     ;
+; CPU_DO[5]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[5]                                               ; N/A     ;
+; CPU_DO[6]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[6]                                               ; N/A     ;
+; CPU_DO[6]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[6]                                               ; N/A     ;
+; CPU_DO[7]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[7]                                               ; N/A     ;
+; CPU_DO[7]                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; tv80s:Z80CPU|tv80_core:i_tv80_core|dout[7]                                               ; N/A     ;
+; CPU_IORQ                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_IORQ                                                                                 ; N/A     ;
+; CPU_IORQ                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CPU_IORQ                                                                                 ; N/A     ;
+; LATCHED_CPU_A[0]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[0]                                                                         ; N/A     ;
+; LATCHED_CPU_A[0]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[0]                                                                         ; N/A     ;
+; LATCHED_CPU_A[10]                                                                        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[10]                                                                        ; N/A     ;
+; LATCHED_CPU_A[10]                                                                        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[10]                                                                        ; N/A     ;
+; LATCHED_CPU_A[11]                                                                        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[11]                                                                        ; N/A     ;
+; LATCHED_CPU_A[11]                                                                        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[11]                                                                        ; N/A     ;
+; LATCHED_CPU_A[12]                                                                        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[12]                                                                        ; N/A     ;
+; LATCHED_CPU_A[12]                                                                        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[12]                                                                        ; N/A     ;
+; LATCHED_CPU_A[13]                                                                        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[13]                                                                        ; N/A     ;
+; LATCHED_CPU_A[13]                                                                        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[13]                                                                        ; N/A     ;
+; LATCHED_CPU_A[14]                                                                        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[14]                                                                        ; N/A     ;
+; LATCHED_CPU_A[14]                                                                        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[14]                                                                        ; N/A     ;
+; LATCHED_CPU_A[15]                                                                        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[15]                                                                        ; N/A     ;
+; LATCHED_CPU_A[15]                                                                        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[15]                                                                        ; N/A     ;
+; LATCHED_CPU_A[1]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[1]                                                                         ; N/A     ;
+; LATCHED_CPU_A[1]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[1]                                                                         ; N/A     ;
+; LATCHED_CPU_A[2]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[2]                                                                         ; N/A     ;
+; LATCHED_CPU_A[2]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[2]                                                                         ; N/A     ;
+; LATCHED_CPU_A[3]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[3]                                                                         ; N/A     ;
+; LATCHED_CPU_A[3]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[3]                                                                         ; N/A     ;
+; LATCHED_CPU_A[4]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[4]                                                                         ; N/A     ;
+; LATCHED_CPU_A[4]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[4]                                                                         ; N/A     ;
+; LATCHED_CPU_A[5]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[5]                                                                         ; N/A     ;
+; LATCHED_CPU_A[5]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[5]                                                                         ; N/A     ;
+; LATCHED_CPU_A[6]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[6]                                                                         ; N/A     ;
+; LATCHED_CPU_A[6]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[6]                                                                         ; N/A     ;
+; LATCHED_CPU_A[7]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[7]                                                                         ; N/A     ;
+; LATCHED_CPU_A[7]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[7]                                                                         ; N/A     ;
+; LATCHED_CPU_A[8]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[8]                                                                         ; N/A     ;
+; LATCHED_CPU_A[8]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[8]                                                                         ; N/A     ;
+; LATCHED_CPU_A[9]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[9]                                                                         ; N/A     ;
+; LATCHED_CPU_A[9]                                                                         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LATCHED_CPU_A[9]                                                                         ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[0]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[0]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[0]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[0]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[10]                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[10]                          ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[10]                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[10]                          ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[11]                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[11]                          ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[11]                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[11]                          ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[12]                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[12]                          ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[12]                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[12]                          ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[1]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[1]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[1]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[1]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[2]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[2]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[2]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[2]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[3]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[3]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[3]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[3]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[4]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[4]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[4]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[4]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[5]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[5]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[5]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[5]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[6]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[6]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[6]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[6]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[7]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[7]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[7]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[7]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[8]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[8]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[8]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[8]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[9]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[9]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[9]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_addr[9]                           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[0]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VDG_DATA[0]                                                                              ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[0]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VDG_DATA[0]                                                                              ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[1]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VDG_DATA[1]                                                                              ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[1]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VDG_DATA[1]                                                                              ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[2]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VDG_DATA[2]                                                                              ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[2]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VDG_DATA[2]                                                                              ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[3]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VDG_DATA[3]                                                                              ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[3]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VDG_DATA[3]                                                                              ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[4]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VCC                                                                                      ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[4]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VCC                                                                                      ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[5]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VCC                                                                                      ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[5]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VCC                                                                                      ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[6]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VCC                                                                                      ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[6]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VCC                                                                                      ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[7]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VCC                                                                                      ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|vram_data[7]                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; VCC                                                                                      ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[0]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[0]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[0]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[0]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[1]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[1]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[1]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[1]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[2]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[2]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[2]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[2]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[3]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[3]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[3]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[3]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[4]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[4]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[4]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[4]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[5]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[5]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[5]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[5]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[6]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[6]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[6]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[6]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[7]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[7]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[7]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[7]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[8]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[8]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[8]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[8]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[9]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[9]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[9]     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|graph_line_2x[9]     ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|show_line            ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|show_line            ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|show_line            ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|show_line            ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|show_pixel           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|show_pixel           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|show_pixel           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|show_pixel           ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|v_blank              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|v_blank              ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|v_blank              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|v_blank              ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|v_synch              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|v_synch              ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|v_synch              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|v_synch              ; N/A     ;
+; RAM_ADDRESS[0]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[0]                                                                              ; N/A     ;
+; RAM_ADDRESS[0]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[0]                                                                              ; N/A     ;
+; RAM_ADDRESS[10]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[10]                                                                             ; N/A     ;
+; RAM_ADDRESS[10]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[10]                                                                             ; N/A     ;
+; RAM_ADDRESS[11]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[11]                                                                             ; N/A     ;
+; RAM_ADDRESS[11]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[11]                                                                             ; N/A     ;
+; RAM_ADDRESS[12]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[12]                                                                             ; N/A     ;
+; RAM_ADDRESS[12]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[12]                                                                             ; N/A     ;
+; RAM_ADDRESS[13]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[13]                                                                             ; N/A     ;
+; RAM_ADDRESS[13]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[13]                                                                             ; N/A     ;
+; RAM_ADDRESS[14]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[14]                                                                             ; N/A     ;
+; RAM_ADDRESS[14]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[14]                                                                             ; N/A     ;
+; RAM_ADDRESS[15]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[15]                                                                             ; N/A     ;
+; RAM_ADDRESS[15]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[15]                                                                             ; N/A     ;
+; RAM_ADDRESS[16]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[16]                                                                             ; N/A     ;
+; RAM_ADDRESS[16]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[16]                                                                             ; N/A     ;
+; RAM_ADDRESS[17]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[17]                                                                             ; N/A     ;
+; RAM_ADDRESS[17]                                                                          ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[17]                                                                             ; N/A     ;
+; RAM_ADDRESS[1]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[1]                                                                              ; N/A     ;
+; RAM_ADDRESS[1]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[1]                                                                              ; N/A     ;
+; RAM_ADDRESS[2]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[2]                                                                              ; N/A     ;
+; RAM_ADDRESS[2]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[2]                                                                              ; N/A     ;
+; RAM_ADDRESS[3]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[3]                                                                              ; N/A     ;
+; RAM_ADDRESS[3]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[3]                                                                              ; N/A     ;
+; RAM_ADDRESS[4]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[4]                                                                              ; N/A     ;
+; RAM_ADDRESS[4]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[4]                                                                              ; N/A     ;
+; RAM_ADDRESS[5]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[5]                                                                              ; N/A     ;
+; RAM_ADDRESS[5]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[5]                                                                              ; N/A     ;
+; RAM_ADDRESS[6]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[6]                                                                              ; N/A     ;
+; RAM_ADDRESS[6]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[6]                                                                              ; N/A     ;
+; RAM_ADDRESS[7]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[7]                                                                              ; N/A     ;
+; RAM_ADDRESS[7]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[7]                                                                              ; N/A     ;
+; RAM_ADDRESS[8]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[8]                                                                              ; N/A     ;
+; RAM_ADDRESS[8]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[8]                                                                              ; N/A     ;
+; RAM_ADDRESS[9]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[9]                                                                              ; N/A     ;
+; RAM_ADDRESS[9]                                                                           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_ADDR[9]                                                                              ; N/A     ;
+; RAM_BE0_N                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_BE0_N~reg0_wirecell                                                                  ; N/A     ;
+; RAM_BE0_N                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_BE0_N~reg0_wirecell                                                                  ; N/A     ;
+; RAM_BE1_N                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_BE1_N~reg0_wirecell                                                                  ; N/A     ;
+; RAM_BE1_N                                                                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_BE1_N~reg0_wirecell                                                                  ; N/A     ;
+; RAM_CS_N                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_CS_N~reg0                                                                            ; N/A     ;
+; RAM_CS_N                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_CS_N~reg0                                                                            ; N/A     ;
+; RAM_DATA[0]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[0]~0                                                                            ; N/A     ;
+; RAM_DATA[0]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[0]~0                                                                            ; N/A     ;
+; RAM_DATA[10]                                                                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[10]~10                                                                          ; N/A     ;
+; RAM_DATA[10]                                                                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[10]~10                                                                          ; N/A     ;
+; RAM_DATA[11]                                                                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[11]~11                                                                          ; N/A     ;
+; RAM_DATA[11]                                                                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[11]~11                                                                          ; N/A     ;
+; RAM_DATA[12]                                                                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[12]~12                                                                          ; N/A     ;
+; RAM_DATA[12]                                                                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[12]~12                                                                          ; N/A     ;
+; RAM_DATA[13]                                                                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[13]~13                                                                          ; N/A     ;
+; RAM_DATA[13]                                                                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[13]~13                                                                          ; N/A     ;
+; RAM_DATA[14]                                                                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[14]~14                                                                          ; N/A     ;
+; RAM_DATA[14]                                                                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[14]~14                                                                          ; N/A     ;
+; RAM_DATA[15]                                                                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[15]~15                                                                          ; N/A     ;
+; RAM_DATA[15]                                                                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[15]~15                                                                          ; N/A     ;
+; RAM_DATA[1]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[1]~1                                                                            ; N/A     ;
+; RAM_DATA[1]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[1]~1                                                                            ; N/A     ;
+; RAM_DATA[2]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[2]~2                                                                            ; N/A     ;
+; RAM_DATA[2]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[2]~2                                                                            ; N/A     ;
+; RAM_DATA[3]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[3]~3                                                                            ; N/A     ;
+; RAM_DATA[3]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[3]~3                                                                            ; N/A     ;
+; RAM_DATA[4]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[4]~4                                                                            ; N/A     ;
+; RAM_DATA[4]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[4]~4                                                                            ; N/A     ;
+; RAM_DATA[5]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[5]~5                                                                            ; N/A     ;
+; RAM_DATA[5]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[5]~5                                                                            ; N/A     ;
+; RAM_DATA[6]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[6]~6                                                                            ; N/A     ;
+; RAM_DATA[6]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[6]~6                                                                            ; N/A     ;
+; RAM_DATA[7]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[7]~7                                                                            ; N/A     ;
+; RAM_DATA[7]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[7]~7                                                                            ; N/A     ;
+; RAM_DATA[8]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[8]~8                                                                            ; N/A     ;
+; RAM_DATA[8]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[8]~8                                                                            ; N/A     ;
+; RAM_DATA[9]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[9]~9                                                                            ; N/A     ;
+; RAM_DATA[9]                                                                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_DATA[9]~9                                                                            ; N/A     ;
+; RAM_OE_N                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ~GND                                                                                     ; N/A     ;
+; RAM_OE_N                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ~GND                                                                                     ; N/A     ;
+; RAM_WE_N                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_WE_N~reg0_wirecell                                                                   ; N/A     ;
+; RAM_WE_N                                                                                 ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RAM_WE_N~reg0_wirecell                                                                   ; N/A     ;
+; RESET_N                                                                                  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RESET_N~_wirecell                                                                        ; N/A     ;
+; RESET_N                                                                                  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; RESET_N~_wirecell                                                                        ; N/A     ;
+; CPU_CLK                                                                                  ; post-fitting  ; connected ; Top            ; post-synthesis    ; CPU_CLK                                                                                  ; N/A     ;
+; CPU_MREQ                                                                                 ; post-fitting  ; connected ; Top            ; post-synthesis    ; CPU_MREQ                                                                                 ; N/A     ;
+; CPU_MREQ                                                                                 ; post-fitting  ; connected ; Top            ; post-synthesis    ; CPU_MREQ                                                                                 ; N/A     ;
+; CPU_RD                                                                                   ; post-fitting  ; connected ; Top            ; post-synthesis    ; CPU_RD                                                                                   ; N/A     ;
+; CPU_RD                                                                                   ; post-fitting  ; connected ; Top            ; post-synthesis    ; CPU_RD                                                                                   ; N/A     ;
+; CPU_RESET                                                                                ; post-fitting  ; connected ; Top            ; post-synthesis    ; CPU_RESET                                                                                ; N/A     ;
+; CPU_RESET                                                                                ; post-fitting  ; connected ; Top            ; post-synthesis    ; CPU_RESET                                                                                ; N/A     ;
+; CPU_WR                                                                                   ; post-fitting  ; connected ; Top            ; post-synthesis    ; CPU_WR                                                                                   ; N/A     ;
+; CPU_WR                                                                                   ; post-fitting  ; connected ; Top            ; post-synthesis    ; CPU_WR                                                                                   ; N/A     ;
+; LATCHED_IO_X70[4]                                                                        ; post-fitting  ; connected ; Top            ; post-synthesis    ; LATCHED_IO_X70[4]                                                                        ; N/A     ;
+; LATCHED_IO_X70[4]                                                                        ; post-fitting  ; connected ; Top            ; post-synthesis    ; LATCHED_IO_X70[4]                                                                        ; N/A     ;
+; LATCHED_IO_X70[5]                                                                        ; post-fitting  ; connected ; Top            ; post-synthesis    ; LATCHED_IO_X70[5]                                                                        ; N/A     ;
+; LATCHED_IO_X70[5]                                                                        ; post-fitting  ; connected ; Top            ; post-synthesis    ; LATCHED_IO_X70[5]                                                                        ; N/A     ;
+; LATCHED_IO_X70[6]                                                                        ; post-fitting  ; connected ; Top            ; post-synthesis    ; LATCHED_IO_X70[6]                                                                        ; N/A     ;
+; LATCHED_IO_X70[6]                                                                        ; post-fitting  ; connected ; Top            ; post-synthesis    ; LATCHED_IO_X70[6]                                                                        ; N/A     ;
+; LATCHED_IO_X70[7]                                                                        ; post-fitting  ; connected ; Top            ; post-synthesis    ; LATCHED_IO_X70[7]                                                                        ; N/A     ;
+; LATCHED_IO_X70[7]                                                                        ; post-fitting  ; connected ; Top            ; post-synthesis    ; LATCHED_IO_X70[7]                                                                        ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|PIXEL_GEN:PIXEL_GEN|pixel_2p_1bit_half ; post-fitting  ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|PIXEL_GEN:PIXEL_GEN|pixel_2p_1bit_half ; N/A     ;
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|PIXEL_GEN:PIXEL_GEN|pixel_2p_1bit_half ; post-fitting  ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|PIXEL_GEN:PIXEL_GEN|pixel_2p_1bit_half ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|h_synch              ; post-fitting  ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|h_synch              ; N/A     ;
+; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|h_synch              ; post-fitting  ; connected ; Top            ; post-synthesis    ; MC6845_VGA:MC6845_VGA|SVGA_TIMING_GENERATION:SVGA_TIMING_GENERATION|h_synch              ; N/A     ;
+; trap                                                                                     ; post-fitting  ; connected ; Top            ; post-synthesis    ; trap                                                                                     ; N/A     ;
+; trap                                                                                     ; post-fitting  ; connected ; Top            ; post-synthesis    ; trap                                                                                     ; N/A     ;
++------------------------------------------------------------------------------------------+---------------+-----------+----------------+-------------------+------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                                                     ;
++---------------------------------------------+-------+------------------+--------------------------------+--------------------------------+
+; Statistic                                   ; Top   ; sld_hub:auto_hub ; sld_signaltap:auto_signaltap_0 ; hard_block:auto_generated_inst ;
++---------------------------------------------+-------+------------------+--------------------------------+--------------------------------+
+; Estimated Total logic elements              ; 4412  ; 140              ; 2219                           ; 0                              ;
+;                                             ;       ;                  ;                                ;                                ;
+; Total combinational functions               ; 4143  ; 116              ; 713                            ; 0                              ;
+; Logic element usage by number of LUT inputs ;       ;                  ;                                ;                                ;
+;     -- 4 input functions                    ; 2513  ; 54               ; 405                            ; 0                              ;
+;     -- 3 input functions                    ; 834   ; 27               ; 212                            ; 0                              ;
+;     -- <=2 input functions                  ; 796   ; 35               ; 96                             ; 0                              ;
+;                                             ;       ;                  ;                                ;                                ;
+; Logic elements by mode                      ;       ;                  ;                                ;                                ;
+;     -- normal mode                          ; 3699  ; 108              ; 662                            ; 0                              ;
+;     -- arithmetic mode                      ; 444   ; 8                ; 51                             ; 0                              ;
+;                                             ;       ;                  ;                                ;                                ;
+; Total registers                             ; 1300  ; 86               ; 1940                           ; 0                              ;
+;     -- Dedicated logic registers            ; 1300  ; 86               ; 1940                           ; 0                              ;
+;                                             ;       ;                  ;                                ;                                ;
+; Virtual pins                                ; 0     ; 0                ; 0                              ; 0                              ;
+; I/O pins                                    ; 202   ; 0                ; 0                              ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0     ; 0                ; 0                              ; 0                              ;
+; Total memory bits                           ; 98304 ; 0                ; 142336                         ; 0                              ;
+; Total RAM block bits                        ; 0     ; 0                ; 0                              ; 0                              ;
+; JTAG                                        ; 1     ; 0                ; 0                              ; 0                              ;
+; PLL                                         ; 0     ; 0                ; 0                              ; 2                              ;
+;                                             ;       ;                  ;                                ;                                ;
+; Connections                                 ;       ;                  ;                                ;                                ;
+;     -- Input Connections                    ; 13    ; 128              ; 2763                           ; 2                              ;
+;     -- Registered Input Connections         ; 11    ; 97               ; 2242                           ; 0                              ;
+;     -- Output Connections                   ; 2620  ; 272              ; 2                              ; 12                             ;
+;     -- Registered Output Connections        ; 1576  ; 271              ; 0                              ; 0                              ;
+;                                             ;       ;                  ;                                ;                                ;
+; Internal Connections                        ;       ;                  ;                                ;                                ;
+;     -- Total Connections                    ; 21812 ; 914              ; 11259                          ; 14                             ;
+;     -- Registered Connections               ; 10080 ; 700              ; 8937                           ; 0                              ;
+;                                             ;       ;                  ;                                ;                                ;
+; External Connections                        ;       ;                  ;                                ;                                ;
+;     -- Top                                  ; 0     ; 119              ; 2500                           ; 14                             ;
+;     -- sld_hub:auto_hub                     ; 119   ; 16               ; 265                            ; 0                              ;
+;     -- sld_signaltap:auto_signaltap_0       ; 2500  ; 265              ; 0                              ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 14    ; 0                ; 0                              ; 0                              ;
+;                                             ;       ;                  ;                                ;                                ;
+; Partition Interface                         ;       ;                  ;                                ;                                ;
+;     -- Input Ports                          ; 31    ; 19               ; 335                            ; 2                              ;
+;     -- Output Ports                         ; 244   ; 37               ; 288                            ; 2                              ;
+;     -- Bidir Ports                          ; 20    ; 0                ; 0                              ; 0                              ;
+;                                             ;       ;                  ;                                ;                                ;
+; Registered Ports                            ;       ;                  ;                                ;                                ;
+;     -- Registered Input Ports               ; 0     ; 4                ; 283                            ; 0                              ;
+;     -- Registered Output Ports              ; 0     ; 26               ; 279                            ; 0                              ;
+;                                             ;       ;                  ;                                ;                                ;
+; Port Connectivity                           ;       ;                  ;                                ;                                ;
+;     -- Input Ports driven by GND            ; 0     ; 1                ; 2                              ; 0                              ;
+;     -- Output Ports driven by GND           ; 0     ; 1                ; 0                              ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0     ; 0                ; 8                              ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0     ; 0                ; 0                              ; 0                              ;
+;     -- Input Ports with no Source           ; 0     ; 1                ; 35                             ; 0                              ;
+;     -- Output Ports with no Source          ; 0     ; 0                ; 0                              ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0     ; 2                ; 40                             ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0     ; 15               ; 279                            ; 0                              ;
++---------------------------------------------+-------+------------------+--------------------------------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++-------------------------------------------------------+
+; Partition Merge Resource Usage Summary                ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Estimated Total logic elements              ; 6,752   ;
+;                                             ;         ;
+; Total combinational functions               ; 4972    ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 2972    ;
+;     -- 3 input functions                    ; 1073    ;
+;     -- <=2 input functions                  ; 927     ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 4469    ;
+;     -- arithmetic mode                      ; 503     ;
+;                                             ;         ;
+; Total registers                             ; 3326    ;
+;     -- Dedicated logic registers            ; 3326    ;
+;     -- I/O registers                        ; 0       ;
+;                                             ;         ;
+; I/O pins                                    ; 202     ;
+; Total memory bits                           ; 240640  ;
+; Embedded Multiplier 9-bit elements          ; 0       ;
+; Total PLLs                                  ; 2       ;
+;     -- PLLs                                 ; 2       ;
+;                                             ;         ;
+; Maximum fan-out node                        ; CPU_CLK ;
+; Maximum fan-out                             ; 1950    ;
+; Total fan-out                               ; 30950   ;
+; Average fan-out                             ; 3.57    ;
++---------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge RAM Summary                                                                                                                                                                                                                                                                                           ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+----------------+
+; Name                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF            ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+----------------+
+; MC6845_VGA:MC6845_VGA|PIXEL_DISPLAY:PIXEL_DISPLAY|CHAR_GEN:CHAR_GEN|CHAR_GEN_ROM:CHAR_GEN_ROM|char_rom_4k_altera:char_rom|altsyncram:altsyncram_component|altsyncram_aqb1:auto_generated|ALTSYNCRAM   ; AUTO ; ROM              ; 4096         ; 8            ; --           ; --           ; 32768  ; charrom_4k.mif ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_gh54:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 139          ; 1024         ; 139          ; 142336 ; None           ;
+; vram_16k4bit_altera:vram_16k4bit|altsyncram:altsyncram_component|altsyncram_in62:auto_generated|ALTSYNCRAM                                                                                            ; AUTO ; True Dual Port   ; 16384        ; 4            ; 16384        ; 4            ; 65536  ; None           ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+----------------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Partition Merge
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Sat Oct 05 11:31:59 2019
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off DE2 -c DE2 --merge=on
+Warning (35010): Previously generated Fitter netlist for partition "Top" is older than current Synthesis netlist -- using the current Synthesis netlist instead to ensure that the latest source changes are included
+    Info (35011): Set the option to Ignore source file changes to force the Quartus II software to always use a previously generated Fitter netlist
+Info (35007): Using synthesis netlist for partition "Top"
+Info (35007): Using synthesis netlist for partition "sld_hub:auto_hub"
+Info (35007): Using synthesis netlist for partition "sld_signaltap:auto_signaltap_0"
+Info (35024): Succesfully connected in-system debug instance "auto_signaltap_0" to all 279 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
+Info (35002): Resolved and merged 3 partition(s)
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 10 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SWITCH[4]"
+    Warning (15610): No output dependent on input pin "SWITCH[5]"
+    Warning (15610): No output dependent on input pin "SWITCH[6]"
+    Warning (15610): No output dependent on input pin "SWITCH[7]"
+    Warning (15610): No output dependent on input pin "SWITCH[8]"
+    Warning (15610): No output dependent on input pin "SWITCH[9]"
+    Warning (15610): No output dependent on input pin "BUTTON_N[0]"
+    Warning (15610): No output dependent on input pin "BUTTON_N[1]"
+    Warning (15610): No output dependent on input pin "BUTTON_N[2]"
+    Warning (15610): No output dependent on input pin "BUTTON_N[3]"
+Info (21057): Implemented 7243 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 31 input pins
+    Info (21059): Implemented 155 output pins
+    Info (21060): Implemented 20 bidirectional pins
+    Info (21061): Implemented 6871 logic cells
+    Info (21064): Implemented 163 RAM segments
+    Info (21065): Implemented 2 PLLs
+Info: Quartus II 64-Bit Partition Merge was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4662 megabytes
+    Info: Processing ended: Sat Oct 05 11:32:03 2019
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
+
+
